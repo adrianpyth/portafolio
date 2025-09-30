@@ -1,7 +1,11 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
-import { FaGithub, FaReact, FaJava } from "react-icons/fa"; // icono de GitHub
+import { FaGithub } from "react-icons/fa";
 
 export default function Projects() {
+    const [open, setOpen] = useState(false);
+
     return (
         <div
             id="projects"
@@ -10,69 +14,141 @@ export default function Projects() {
         >
             <h1 className="text-3xl text-green-400 text-center mb-8 font-tourney animate-pulse">PROJECTS</h1>
 
-            {/* Proyecto 1 */}
-            <div className="md:flex bg-gray-900/80 border-4 border-cyan-400 rounded-lg shadow-lg shadow-cyan-500/40 p-4 gap-6 hover:scale-105 transition-transform duration-200">
-
-                {/* IZQUIERDA: Imagen + tecnologías */}
+            {/* Proyecto 1 con video en modal */}
+            <div className="md:flex bg-gray-900/80 border-4 border-cyan-400 rounded-lg shadow-lg shadow-cyan-500/40 p-4 gap-6 hover:scale-105 transition-transform duration-200 font-tourney font-bold">
+                {/* IZQUIERDA: Miniatura + botón de video */}
                 <div className="md:w-1/3 flex flex-col items-center">
-                    <div className="border-4 border-cyan-400 rounded-lg p-1 mb-4">
+                    <div
+                        className="border-4 border-cyan-400 rounded-lg p-1 mb-4 w-full cursor-pointer relative group"
+                        onClick={() => setOpen(true)}
+                    >
                         <img
-                            src="/projects/ecommerce.png"
-                            alt="E-Commerce Retro"
-                            className="w-full object-cover rounded-lg"
+                            src="./assets/artesjac.png"
+                            alt="Abrir video"
+                            className="w-full rounded-lg"
                         />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                            <p className="text-cyan-400 font-bold text-lg">▶ Ver Video</p>
+                        </div>
                     </div>
-                    <div className="text-xs text-gray-300 text-center space-y-1">
-                        <p>React / Next.js / Tailwind</p>
-                        <p>Node.js / Vercel</p>
+                    <div className="text-lg text-gray-300 text-center space-y-1">
+                        <p>React SPA / Express.js / Tailwind</p>
+                        <p>MongoDB / Node.js </p>
                     </div>
                 </div>
 
                 {/* DERECHA: Descripción + GitHub */}
                 <div className="md:w-2/3 flex flex-col justify-between">
-                    <p className="text-xs text-gray-300 mb-4">
-                        Tienda online estilo retro con interfaz pixel-art, animaciones y carrito de compras funcional.
+                    <p className="text-lg text-violet-400 mb-4">
+                        Esta es una plataforma de comercio electrónico (e-commerce) diseñada específicamente para conectar a artistas, creadores y artesanos con compradores que buscan productos únicos y hechos a mano. Si estás cansado de los productos masivos, este es tu destino para descubrir arte original, joyería artesanal, decoración, y más. Es un espacio vibrante y fácil de usar, donde la creatividad es la protagonista.
                     </p>
                     <div className="flex items-center space-x-4">
                         <FaGithub className="text-gray-300 hover:text-white transition-colors duration-200" />
-                        <Link href="https://github.com/tuusuario/ecommerce-retro" target="_blank">
-                            <p className="text-xs text-cyan-400 font-bold hover:underline cursor-pointer">
-                                Ver en GitHub
+                        <Link href="https://github.com/JoseP055/artesjac-frontend" target="_blank">
+                            <p className="text-lg text-cyan-400 font-bold hover:underline cursor-pointer">
+                                Ver en GitHub (Frontend)
+                            </p>
+                        </Link>
+                        <FaGithub className="text-gray-300 hover:text-white transition-colors duration-200" />
+                        <Link href="https://github.com/JoseP055/artesjac-backend" target="_blank">
+                            <p className="text-lg text-cyan-400 font-bold hover:underline cursor-pointer">
+                                Ver en GitHub (Backend)
                             </p>
                         </Link>
                     </div>
                 </div>
             </div>
 
-            {/* Proyecto 2 */}
-            <div className="md:flex bg-gray-900/80 border-4 border-pink-400 rounded-lg shadow-lg shadow-pink-500/40 p-4 gap-6 hover:scale-105 transition-transform duration-200">
-                <div className="md:w-1/3 flex flex-col items-center">
-                    <div className="border-4 border-pink-400 rounded-lg p-1 mb-4">
-                        <img
-                            src="/projects/facturas.png"
-                            alt="Gestión de Facturas"
-                            className="w-full object-cover rounded-lg"
-                        />
-                    </div>
-                    <div className="text-xs text-gray-300 text-center space-y-1">
-                        <p>Java / SQL Server / OCR</p>
-                        <p>Spring Boot / Maven</p>
+            {/* Modal con YouTube */}
+            {open && (
+                <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+                    <div className="relative w-full max-w-3xl aspect-video bg-black rounded-lg shadow-lg">
+                        <iframe
+                            className="w-full h-full rounded-lg"
+                            src="https://www.youtube.com/embed/UNKiFpuXsTI"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                        <button
+                            className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
+                            onClick={() => setOpen(false)}
+                        >
+                            ✖
+                        </button>
                     </div>
                 </div>
-                <div className="md:w-2/3 flex flex-col justify-between">
-                    <p className="text-xs text-gray-300 mb-4">
-                        Sistema de automatización de facturas electrónicas, capaz de leer PDFs y XML, extraer datos financieros y almacenarlos en SQL Server.
+            )}
+
+            {/* Proyecto 2 con video en modal */}
+            {/* <div className="md:flex bg-gray-900/80 border-4 border-pink-400 rounded-lg shadow-lg shadow-cyan-500/40 p-4 gap-6 hover:scale-105 transition-transform duration-200 font-tourney font-bold"> */}
+            {/* IZQUIERDA: Miniatura + botón de video */}
+            {/* <div className="md:w-1/3 flex flex-col items-center">
+                    <div
+                        className="border-4 border-cyan-400 rounded-lg p-1 mb-4 w-full cursor-pointer relative group"
+                        onClick={() => setOpen(true)}
+                    >
+                        <img
+                            src="./assets/artesjac.png"
+                            alt="Abrir video"
+                            className="w-full rounded-lg"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                            <p className="text-cyan-400 font-bold text-lg">▶ Ver Video</p>
+                        </div>
+                    </div>
+                    <div className="text-lg text-gray-300 text-center space-y-1">
+                        <p>React SPA / Express.js / Tailwind</p>
+                        <p>MongoDB / Node.js </p>
+                    </div>
+                </div> */}
+
+            {/* DERECHA: Descripción + GitHub */}
+            {/* <div className="md:w-2/3 flex flex-col justify-between">
+                    <p className="text-lg text-gray-300 mb-4">
+                        Esta es una plataforma de comercio electrónico (e-commerce) diseñada específicamente para conectar a artistas, creadores y artesanos con compradores que buscan productos únicos y hechos a mano. Si estás cansado de los productos masivos, este es tu destino para descubrir arte original, joyería artesanal, decoración, y más. Es un espacio vibrante y fácil de usar, donde la creatividad es la protagonista.
                     </p>
                     <div className="flex items-center space-x-4">
                         <FaGithub className="text-gray-300 hover:text-white transition-colors duration-200" />
-                        <Link href="https://github.com/tuusuario/facturas" target="_blank">
-                            <p className="text-xs text-pink-400 font-bold hover:underline cursor-pointer">
-                                Ver en GitHub
+                        <Link href="https://github.com/JoseP055/artesjac-frontend" target="_blank">
+                            <p className="text-xs text-cyan-400 font-bold hover:underline cursor-pointer">
+                                Ver en GitHub (Frontend)
+                            </p>
+                        </Link>
+                        <FaGithub className="text-gray-300 hover:text-white transition-colors duration-200" />
+                        <Link href="https://github.com/JoseP055/artesjac-backend" target="_blank">
+                            <p className="text-xs text-cyan-400 font-bold hover:underline cursor-pointer">
+                                Ver en GitHub (Backend)
                             </p>
                         </Link>
                     </div>
                 </div>
-            </div>
+            </div> */}
+
+
+            {/* Modal con YouTube */}
+            {/* {open && (
+                <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+                    <div className="relative w-full max-w-3xl aspect-video bg-black rounded-lg shadow-lg">
+                        <iframe
+                            className="w-full h-full rounded-lg"
+                            src="https://www.youtube.com/embed/UNKiFpuXsTI"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                        <button
+                            className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
+                            onClick={() => setOpen(false)}
+                        >
+                            ✖
+                        </button>
+                    </div>
+                </div>
+            )} */}
+
 
             {/* BOTÓN REGRESAR */}
             <div className="absolute bottom-6 left-0 right-0 px-6 flex justify-between font-tourney">
@@ -88,9 +164,6 @@ export default function Projects() {
                     </button>
                 </Link>
             </div>
-
-
-
         </div>
     );
 }

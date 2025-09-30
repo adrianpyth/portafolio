@@ -41,11 +41,11 @@ export default function About() {
 
                 {/* DERECHA: AVATAR */}
                 <div className="flex justify-center md:justify-end">
-                    <div className="mt-6 border-4 border-pink-500 rounded-lg bg-gray-900/80 p-2 inline-block shadow-lg shadow-pink-500/40">
+                    <div className="mt-6 border-4 border-animated border-violet-500 rounded-lg bg-gray-900/80 p-2 inline-block shadow-lg shadow-pink-500/40">
                         <img
-                            src="./assets/fotoperfil.jpg"
+                            src="./assets/perfil_pixel.png"
                             alt="Avatar pixelado"
-                            className="w-40 h-40 object-cover border-4 border-green-400"
+                            className="w-70 h-75 object-cover border-4 border-red-900"
                         />
                     </div>
                 </div>
