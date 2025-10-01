@@ -11,12 +11,22 @@ export default function About() {
             {/* CONTENIDO PRINCIPAL */}
             <div className="grid md:grid-cols-2 gap-6 items-center">
                 {/* IZQUIERDA: INFO */}
-                <div>
-                    <h1 className="text-2xl text-white mb-4 font-tourney animate-pulse">INFO...</h1>
+                <div className="flex flex-col items-center justify-center p-4">
+
+                    {/* Título: INFO... */}
+                    {/* Se reduce de un gran text-3xl (o text-2xl por defecto) en desktop a text-xl en móvil */}
+                    <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl text-white mb-4 font-tourney animate-pulse">
+                        INFO...
+                    </h1>
 
                     {/* Caja estilo misión */}
-                    <div className="border border-green-500 p-8 bg-gray-900/70 text-xs text-green-300 mt-6">
-                        <p className="text-lg text-gray-300 leading-relaxed mt-2 font-pixel">
+                    {/* Se aumenta el padding en pantallas grandes (p-4 en móvil, p-8 en desktop) */}
+                    <div className="border border-green-500 p-4 sm:p-6 md:p-8 bg-gray-900/70 text-xs text-green-300 mt-6">
+
+                        {/* Párrafo del texto principal */}
+                        {/* Se reduce de un texto grande (lg) a un tamaño base (base) o pequeño (sm) en móvil. 
+           Se mantiene 'text-gray-300' y 'font-pixel' como base. */}
+                        <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed font-pixel">
                             Junior developer with hands-on experience in web development using{" "}
                             <span className="text-violet-400">.NET Core</span>,{" "}
                             <span className="text-blue-400">C#</span>, and{" "}
@@ -33,10 +43,6 @@ export default function About() {
                             software solutions.
                         </p>
                     </div>
-
-
-
-
                 </div>
 
                 {/* DERECHA: AVATAR */}
@@ -382,7 +388,7 @@ export default function About() {
             {/* BOTONES AL FINAL */}
             <Link href="/">
                 <div className="flex justify-center space-x-6 mt-6 font-tourney">
-                    <button className="px-6 py-3 border-2 border-amber-300 text-amber-300 text-xs font-bold animate-pulse hover:bg-amber-500 hover:text-black transition-all duration-200">
+                    <button className="px-4 py-2 sm:px-6 sm:py-3 bg-amber-500 text-black font-bold text-[10px] sm:text-xs animate-pulse hover:bg-violet-400 transition-all duration-200 transform hover:scale-105 shadow-lg shadow-amber-500/50">
                         [X] MENU
                     </button>
 
@@ -392,9 +398,7 @@ export default function About() {
             {/* BOTÓN NEXT (abajo a la derecha) */}
             <div className="absolute bottom-6 right-6 font-tourney">
                 <Link href="/Projects">
-                    <button className="px-6 py-3 bg-green-500 text-black font-bold text-xs animate-pulse
-                             hover:bg-violet-400 transition-all duration-200 transform hover:scale-105
-                             shadow-lg shadow-green-500/50">
+                    <button className="px-4 py-2 sm:px-6 sm:py-3 bg-green-500 text-black font-bold text-[10px] sm:text-xs animate-pulse hover:bg-violet-400 transition-all duration-200 transform hover:scale-105 shadow-lg shadow-green-500/50">
                         NEXT →
                     </button>
                 </Link>
