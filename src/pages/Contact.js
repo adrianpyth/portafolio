@@ -108,11 +108,11 @@ export default function Contact() {
                 </div>
                 {/* BOTÓN REGRESAR */}
                 <div className="absolute bottom-0 left-0 right-0 px-4 sm:px-6 flex justify-between font-tourney">
-                    <a href="/Projects">
+                    <Link href="/Projects">
                         <button className="px-4 py-2 sm:px-6 sm:py-3 bg-green-500 text-black font-bold text-[10px] sm:text-xs animate-pulse hover:bg-violet-400 transition-all duration-200 transform hover:scale-105 shadow-lg shadow-green-500/50">
                             ← BACK
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </div>
         );
@@ -251,11 +251,11 @@ export default function Contact() {
 
             {/* BOTÓN REGRESAR */}
             <div className="absolute bottom-0 left-0 right-0 px-4 sm:px-6 flex justify-between font-tourney">
-                <a href="/Projects">
+                <Link href="/Projects">
                     <button className="px-4 py-2 sm:px-6 sm:py-3 bg-green-500 text-black font-bold text-[10px] sm:text-xs animate-pulse hover:bg-violet-400 transition-all duration-200 transform hover:scale-105 shadow-lg shadow-green-500/50">
                         ← BACK
                     </button>
-                </a>
+                </Link>
             </div>
         </div>
     );
