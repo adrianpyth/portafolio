@@ -14,7 +14,8 @@ export default function Home() {
             <span className="text-white/100 animate-pulse">&gt;</span>
             <span className="animate-pulse font-tourney"> SOFTWARE</span>
             <span className="text-white mx-1 sm:mx-2"></span>
-            <br className="sm:hidden" /> {/* Salto de línea forzado en móvil */}
+
+            <br clas /> {/* Salto de línea  */}
             <span className="text-violet-400 animate-pulse font-tourney">DEVELOPER</span>
           </h1>
 
