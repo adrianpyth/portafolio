@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 // Eliminada la importación de @formspree/react para solucionar el error de compilación.
 
@@ -83,25 +84,25 @@ export default function Contact() {
 
                         <p className="text-gray-300 text-sm sm:text-base md:text-lg">
                             <span className="text-cyan-400">GitHub:</span>{" "}
-                            <a
+                            <Link
                                 href="https://github.com/adrianpyth"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="underline hover:text-white"
                             >
                                 github.com/adrianpyth
-                            </a>
+                            </Link>
                         </p>
                         <p className="text-gray-300 text-sm sm:text-base md:text-lg">
                             <span className="text-cyan-400">LinkedIn:</span>{" "}
-                            <a
+                            <Link
                                 href="https://www.linkedin.com/in/adri%C3%A1nzcastro/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="underline hover:text-white"
                             >
                                 adrinzcastro
-                            </a>
+                            </Link>
                         </p>
                     </div>
                 </div>
@@ -225,25 +226,25 @@ export default function Contact() {
 
                     <p className="text-gray-300 text-sm sm:text-base md:text-lg">
                         <span className="text-cyan-400">GitHub:</span>{" "}
-                        <a
+                        <Link
                             href="https://github.com/adrianpyth"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="underline hover:text-white"
                         >
                             github.com/adrianpyth
-                        </a>
+                        </Link>
                     </p>
                     <p className="text-gray-300 text-sm sm:text-base md:text-lg">
                         <span className="text-cyan-400">LinkedIn:</span>{" "}
-                        <a
+                        <Link
                             href="https://www.linkedin.com/in/adri%C3%A1nzcastro/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="underline hover:text-white"
                         >
                             adrinzcastro
-                        </a>
+                        </Link>
                     </p>
                 </div>
             </div>
