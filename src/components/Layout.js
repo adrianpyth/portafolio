@@ -40,7 +40,8 @@ export default function Layout({ children }) {
         { name: 'HOME', href: '/' },
         { name: 'ABOUT', href: '/About' },
         { name: 'PROJECTS', href: '/Projects' },
-        { name: 'CONTACT', href: '/Contact' }
+        { name: 'CONTACT', href: '/Contact' },
+        { name: 'TRAINING', href: '/Training' }
     ];
 
     return (
