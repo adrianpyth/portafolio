@@ -81,53 +81,7 @@ export default function Home() {
       </div>
 
       {/* METRICS - Profesionales y relevantes */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        {[
-          {
-            label: 'EXPERIENCE',
-            value: '3+',
-            unit: 'YEARS',
-            color: 'text-cyan-400',
-            border: 'border-cyan-500/30',
-            glow: 'hover:shadow-cyan-500/20'
-          },
-          {
-            label: 'PROJECTS',
-            value: '25+',
-            unit: 'COMPLETED',
-            color: 'text-violet-400',
-            border: 'border-violet-500/30',
-            glow: 'hover:shadow-violet-500/20'
-          },
-          {
-            label: 'TECHNOLOGIES',
-            value: '15+',
-            unit: 'MASTERED',
-            color: 'text-green-400',
-            border: 'border-green-500/30',
-            glow: 'hover:shadow-green-500/20'
-          }
-        ].map((item, index) => (
-          <div
-            key={index}
-            className={`group bg-black/30 border ${item.border} hover:border-opacity-60 p-8 rounded-xl 
-                       transition-all duration-300 hover:shadow-lg ${item.glow} backdrop-blur-sm
-                       hover:bg-black/50 cursor-default`}
-          >
-            <div className="text-center">
-              <div className={`${item.color} text-4xl sm:text-5xl font-bold mb-2 font-mono group-hover:scale-110 transition-transform duration-300`}>
-                {item.value}
-              </div>
-              <div className="text-gray-500 text-xs uppercase tracking-wider font-mono mb-1">
-                {item.unit}
-              </div>
-              <div className="text-gray-400 text-sm font-mono tracking-wide">
-                {item.label}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+
 
       {/* Tech Stack Preview - Opcional pero elegante */}
       <div className="max-w-5xl mx-auto">
