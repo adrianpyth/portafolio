@@ -344,6 +344,28 @@ export default function Contact() {
                         ← Back
                     </button>
                 </a>
+
+
+                <a href="/Training">
+                    <button
+                        className="
+              px-6 py-3
+              bg-cyan-500/90
+              text-black
+              font-bold text-sm
+              rounded-lg
+              uppercase tracking-wider
+              font-mono
+              transition-all duration-300
+              transform hover:scale-105
+              shadow-lg shadow-cyan-500/30
+              hover:bg-cyan-400
+            "
+                    >
+                        Next →
+                    </button>
+                </a>
+
             </div>
         </div>
     );

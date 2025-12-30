@@ -228,7 +228,7 @@ export default function Training() {
                     </button>
                 </a>
 
-                <a href="/Projects">
+                <a href="/Contact">
                     <button
                         className="
               px-6 py-3
